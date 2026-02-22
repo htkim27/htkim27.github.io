@@ -1,0 +1,62 @@
+* { box-sizing: border-box; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  line-height: 1.5;
+}
+header {
+  border-bottom: 1px solid #eee;
+  padding: 0.75rem 1.5rem;
+}
+nav a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #333;
+}
+nav a:hover { text-decoration: underline; }
+
+main {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.hero {
+  padding: 2rem 0;
+}
+.hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.hero p { margin: 0.25rem 0; }
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #111827;
+  color: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.highlights {
+  margin-top: 3rem;
+}
+.project-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.project-detail {
+  margin-bottom: 2.5rem;
+}
+.project-detail .meta {
+  font-size: 0.9rem;
+  color: #666;
+}
+footer {
+  border-top: 1px solid #eee;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+}
