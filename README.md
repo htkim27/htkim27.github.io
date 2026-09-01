@@ -1,16 +1,20 @@
-# nextAI · AI Engineer Portfolio
+# Hyuntak Kim · Engineering Notes
 
-정적 AI 포트폴리오 사이트입니다. GitHub Pages에서 바로 동작합니다.
+Obsidian 노트를 Quartz v4로 발행하는 개인 포트폴리오 겸 엔지니어링 블로그입니다.
 
-## 구조
+## 로컬 실행
 
-- **index.html** — 홈 (소개 + 대표 프로젝트)
-- **about.html** — About 페이지
-- **projects.html** — 프로젝트 리스트 / 케이스 스터디
-- **blog.html** — 블로그 (준비 중)
-- **assets/** — CSS, 이미지, JS
+```bash
+npm install
+npx quartz build --serve
+```
 
-## 로컬 확인
+콘텐츠는 `content/` 아래에 작성합니다. 공개하지 않을 노트에는 frontmatter로 `draft: true`를 추가하세요.
 
-`ai-portfolio` 폴더를 웹 서버 루트로 열거나, GitHub Pages 설정에서 해당 경로를 사용하면 됩니다.  
-루트 `index.html`을 진입점으로 쓰려면 이 폴더 내용을 저장소 루트로 옮기면 됩니다.
+## 배포
+
+`main` 브랜치에 push하면 GitHub Actions가 Quartz를 빌드해 GitHub Pages에 배포합니다. 저장소의 **Settings → Pages → Source**가 **GitHub Actions**로 설정되어 있어야 합니다.
+
+```bash
+npx quartz sync
+```
