@@ -5,7 +5,33 @@
   --soft-shadow: 0 18px 55px rgba(20, 28, 45, 0.08);
 }
 body {
-  background-image: radial-gradient(circle at 70% 0%, rgba(49, 87, 213, 0.07), transparent 28rem);
+  position: relative;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  /* Monet inspired soft pastel gradients */
+  background-image:
+    radial-gradient(
+      circle at 70% 0%,
+      color-mix(in srgb, var(--secondary) 15%, transparent),
+      transparent 35rem
+    ),
+    radial-gradient(
+      circle at 20% 40%,
+      color-mix(in srgb, var(--tertiary) 10%, transparent),
+      transparent 30rem
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      color-mix(in srgb, var(--highlight) 80%, transparent),
+      transparent 35rem
+    );
+  opacity: var(--scroll-opacity, 0);
+  transition: opacity 0.1s ease-out;
 }
 .page {
   max-width: 1380px;
@@ -77,12 +103,12 @@ body:has(.home-page) .page-footer {
 }
 .profile-photo-wrap {
   width: 170px;
-  margin: 0 auto;
+  margin: 0; /* Left align to match text */
   overflow: hidden;
   aspect-ratio: 4 / 5;
   border-radius: 16px;
-  background: var(--lightgray);
-  box-shadow: var(--soft-shadow);
+  background: transparent;
+  box-shadow: none; /* Removed shadow for transparent image look */
 }
 .profile-photo {
   width: 100%;
@@ -91,6 +117,14 @@ body:has(.home-page) .page-footer {
   border-radius: 0;
   object-fit: cover;
   object-position: center 28%;
+}
+.profile-name {
+  margin: 1.2rem 0 0;
+  font-size: clamp(1.4rem, 2.8vw, 1.9rem); /* one size smaller */
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+  text-align: left;
+  font-family: var(--titleFont);
 }
 .profile-summary h1 {
   margin: 0;
@@ -398,7 +432,7 @@ article:not(.home-page) > img:first-of-type {
   }
   .profile-photo-wrap {
     width: 105px;
-    margin: 0 auto;
+    margin: 0;
   }
   .career-list div {
     grid-template-columns: 1fr;

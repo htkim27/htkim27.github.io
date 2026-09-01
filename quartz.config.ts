@@ -21,32 +21,32 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "IBM Plex Sans KR",
+        header: "Nanum Myeongjo", // Elegant serif font for an artistic impressionist feel
         body: "IBM Plex Sans KR",
         code: "IBM Plex Mono",
       },
       colors: {
         lightMode: {
-          light: "#f7f8fb",
-          lightgray: "#e5e9f0",
-          gray: "#87909f",
-          darkgray: "#3e4653",
-          dark: "#10141c",
-          secondary: "#3157d5",
-          tertiary: "#00a88f",
-          highlight: "rgba(49, 87, 213, 0.10)",
-          textHighlight: "#ffe08a88",
+          light: "#f4f6f0", // Very pale lily pond cream/green
+          lightgray: "#e2e8e4", // Soft grayish water
+          gray: "#859b96", // Muted green/blue
+          darkgray: "#3a4f49", // Deep blue-green
+          dark: "#1a2529", // Deep navy
+          secondary: "#6f88b5", // Soft impressionist blue/lavender
+          tertiary: "#8fb8a2", // Soft lily pad green
+          highlight: "rgba(111, 136, 181, 0.15)", // Wash of lavender-blue
+          textHighlight: "rgba(240, 225, 140, 0.5)", // Sunlight yellow
         },
         darkMode: {
-          light: "#0d1118",
-          lightgray: "#252b36",
-          gray: "#70798a",
-          darkgray: "#c5ccd8",
-          dark: "#f3f5f8",
-          secondary: "#8aa4ff",
-          tertiary: "#5ee0c7",
-          highlight: "rgba(138, 164, 255, 0.13)",
-          textHighlight: "#b3aa0288",
+          light: "#141824", // Deep night blue
+          lightgray: "#262c3f", // Dark slate/violet
+          gray: "#6f7a99", // Muted twilight blue
+          darkgray: "#b5becd", // Soft twilight glow
+          dark: "#e8ecef", // Pale moon white
+          secondary: "#9db2e1", // Luminous violet-blue
+          tertiary: "#f4b9a7", // Glowing peach
+          highlight: "rgba(157, 178, 225, 0.15)",
+          textHighlight: "rgba(215, 185, 100, 0.4)", // Subtle warm glow
         },
       },
     },

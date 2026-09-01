@@ -31,7 +31,10 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TagList(),
   ],
   left: [
-    Component.PageTitle(),
+    Component.ConditionalRender({
+      component: Component.PageTitle(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
     Component.MobileOnly(Component.Spacer()),
     Component.Darkmode(),
     Component.SimpleNavigation(),
