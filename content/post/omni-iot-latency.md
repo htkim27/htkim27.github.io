@@ -7,6 +7,8 @@ tags: ["engineering", "iot", "latency", "llm", "qwen", "streaming"]
 
 # 방구석 PC로 로컬 IoT 음성 챗봇 만들기: Omni-IoT 지연 시간(Latency) 최적화 여정
 
+![Omni-IoT Cover Image](/assets/omni_iot_cover.jpg)
+
 *Written by htkim*
 
 아이언맨의 '자비스'처럼 집 안의 기기들을 음성으로 자연스럽게 제어하는 AI를 상상해 본 적 있으신가요? `omni-iot` 프로젝트는 이 상상을 현실로 만들기 위해 시작되었습니다. 목표는 클라우드 서버에 의존하지 않고, 일반 가정용 데스크톱에서 완벽하게 로컬로 동작하는 양방향(Duplex) 음성 챗봇을 구축하는 것입니다.
