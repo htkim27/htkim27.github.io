@@ -6,6 +6,10 @@ socialImage: "https://htkim27.github.io/assets/omni_iot_latency_cover.png"
 tags: ["Chatbot", "V2V Latency", "Architecture Optimization"]
 ---
 
+> [!TIP]
+> ✅ **작성 완료된 글입니다.**
+> 본 포스트는 로컬 환경에서의 V2V 응답 지연 최적화 실험 결과를 정리한 완성본입니다.
+
 > **[`omni-iot` Github Project](https://github.com/htkim27/omni-iot)**
 > 아이언맨의 '자비스'처럼 집 안의 기기들을 음성으로 자연스럽게 제어하는 AI를 상상해 본 적 있으신가요? 누구나 자유롭게 나만의 것으로 만들 수 있는 **일반 가정용 컴퓨터에서 외부 인터넷 없이 혼자서도 척척 동작하는 양방향 음성 비서**를 만들어 이 상상을 현실로 옮겨보고자 합니다.
 
