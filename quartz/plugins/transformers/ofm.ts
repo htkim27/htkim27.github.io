@@ -369,6 +369,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
 
           if (opts.enableInHtmlEmbed) {
             visit(tree, "html", (node: Html) => {
+              if (/^\s*<!--[\s\S]*?-->\s*$/.test(node.value)) return
               for (const [regex, replace] of replacements) {
                 if (typeof replace === "string") {
                   node.value = node.value.replace(regex, replace)

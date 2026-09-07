@@ -2,12 +2,14 @@
 title: "[nexus-memory] 주방을 정리해 달라는 요청, 기억 설계가 바뀌면 더 잘 해낼까?"
 date: "2026-09-08"
 description: "AI2-THOR의 고수준 토이 태스크 5종에서 MEM-inspired 기억 갱신과 계층적 메모리 압축을 비교하는 첫 PoC. 자율 계획과 전체 목표 달성을 평가할 실험을 설계합니다."
+socialImage: "https://htkim27.github.io/assets/nexus_memory_cover.png"
 tags: ["nexus-memory", "NexusSum", "MEM", "Agent Memory", "Embodied AI", "PoC", "WIP"]
-draft: true
 ---
 
 > [!NOTE]
 > 현재 작성 중인 글의 뼈대입니다. 고수준 태스크의 자율 수행을 비교할 실험 계획이며, 환경과 메모리 모듈은 아직 구현하지 않았습니다. 구현·측정 결과는 이후 추가합니다.
+
+![계층적 기억 구조를 바탕으로 주방 정리를 계획하고 수행하는 AI 에이전트](/assets/nexus_memory_cover.png)
 
 ## 1. “주방을 정리해 줘”를 끝까지 수행하려면
 
