@@ -1,5 +1,5 @@
 ---
-title: "[nexus-memory] 주방을 정리해 달라는 요청, 기억 설계가 바뀌면 더 잘 해낼까?"
+title: "(작성중) [nexus-memory] 주방을 정리해 달라는 요청, 기억 설계가 바뀌면 더 잘 해낼까?"
 date: "2026-09-08"
 description: "AI2-THOR의 고수준 토이 태스크 5종에서 MEM-inspired 기억 갱신과 계층적 메모리 압축을 비교하는 첫 PoC. 자율 계획과 전체 목표 달성을 평가할 실험을 설계합니다."
 socialImage: "https://htkim27.github.io/assets/nexus_memory_cover.png"
