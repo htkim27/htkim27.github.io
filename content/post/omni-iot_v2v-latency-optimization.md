@@ -1,6 +1,6 @@
 ---
 title: "[Omni-IoT] 방구석 PC로 자비스 만들기: 답답했던 대화 딜레이 해결하기"
-date: "2026-09-07"
+date: "2026-09-03"
 description: "12초의 긴 침묵을 2초대로. 방구석 PC로 만든 로컬 음성 에이전트 응답 지연 최적화."
 socialImage: "https://htkim27.github.io/assets/omni_iot_latency_cover.png"
 tags: ["Chatbot", "V2V Latency", "Architecture Optimization"]
