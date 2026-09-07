@@ -4,6 +4,7 @@ date: "2026-09-08"
 description: "AI2-THOR의 고수준 토이 태스크 5종에서 MEM-inspired 기억 갱신과 계층적 메모리 압축을 비교하는 첫 PoC. 자율 계획과 전체 목표 달성을 평가할 실험을 설계합니다."
 socialImage: "https://htkim27.github.io/assets/nexus_memory_cover.png"
 tags: ["nexus-memory", "NexusSum", "MEM", "Agent Memory", "Embodied AI", "PoC", "WIP"]
+draft: true
 ---
 
 > [!NOTE]

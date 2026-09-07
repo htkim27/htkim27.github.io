@@ -4,6 +4,7 @@ date: "2026-09-07"
 description: "키워드 추출만으로는 담아낼 수 없는 장문 서사. 복선과 인과관계를 보존하며 고유의 맥락을 안전하게 요약하는 NexusSum 프레임워크를 소개합니다."
 socialImage: "https://img.youtube.com/vi/wB7TDnWc2mw/maxresdefault.jpg"
 tags: ["Agentic AI", "LLM", "Summarization", "NexusSum", "Long Context", "NLP", "WIP"]
+draft: true
 ---
 
 > [!NOTE]

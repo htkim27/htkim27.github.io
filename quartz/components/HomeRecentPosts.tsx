@@ -15,7 +15,13 @@ const HomeRecentPosts: QuartzComponent = ({ allFiles, fileData, cfg }: QuartzCom
   const posts = allFiles
     .filter((page) => {
       const slug = page.slug ?? ""
-      return slug.startsWith("post/") && !page.filePath?.endsWith("index.md")
+      const isDraft =
+        page.frontmatter?.draft === true || page.frontmatter?.draft === "true"
+      return (
+        slug.startsWith("post/") &&
+        !page.filePath?.endsWith("index.md") &&
+        !isDraft
+      )
     })
     .sort((a, b) => (getDate(cfg, b)?.getTime() ?? 0) - (getDate(cfg, a)?.getTime() ?? 0))
     .slice(0, 3)
