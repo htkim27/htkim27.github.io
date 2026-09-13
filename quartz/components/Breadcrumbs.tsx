@@ -53,12 +53,13 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
     const trie = (ctx.trie ??= trieFromAllFiles(allFiles))
     const slugParts = fileData.slug!.split("/")
     const pathNodes = trie.ancestryChain(slugParts)
+    const isEnglish = fileData.frontmatter?.lang === "en"
 
     if (!pathNodes) {
       return null
     }
 
-    const crumbs: CrumbData[] = pathNodes.map((node, idx) => {
+    let crumbs: CrumbData[] = pathNodes.map((node, idx) => {
       const crumb = formatCrumb(node.displayName, fileData.slug!, simplifySlug(node.slug))
       if (idx === 0) {
         crumb.displayName = options.rootName
@@ -71,6 +72,14 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
 
       return crumb
     })
+
+    if (isEnglish && crumbs.length > 1) {
+      crumbs = crumbs.filter((_, idx) => idx !== 1)
+      crumbs[0] = {
+        displayName: "Home",
+        path: resolveRelative(fileData.slug!, "en" as SimpleSlug),
+      }
+    }
 
     if (!options.showCurrentPage) {
       crumbs.pop()

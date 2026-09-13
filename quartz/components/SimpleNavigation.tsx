@@ -2,6 +2,8 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import { resolveRelative, SimpleSlug } from "../util/path"
 
 const SimpleNavigation: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
+  const isEnglish = fileData.slug === "en/index" || fileData.slug?.startsWith("en/")
+  const prefix = isEnglish ? "en/" : ""
   const link = (label: string, slug: SimpleSlug) => (
     <a
       class={`internal nav-parent ${String(fileData.slug) === String(slug) ? "active" : ""}`}
@@ -13,8 +15,8 @@ const SimpleNavigation: QuartzComponent = ({ fileData }: QuartzComponentProps) =
 
   return (
     <nav class="simple-navigation" aria-label="Main navigation">
-      {link("Profile", "profile" as SimpleSlug)}
-      {link("Post", "post" as SimpleSlug)}
+      {link("Profile", `${prefix}profile` as SimpleSlug)}
+      {link(isEnglish ? "Posts" : "Post", `${prefix}post` as SimpleSlug)}
     </nav>
   )
 }

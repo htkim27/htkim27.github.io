@@ -25,20 +25,23 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
 
   function ContentMetadata({ cfg, fileData, displayClass }: QuartzComponentProps) {
     const text = fileData.text
+    const isEnglish = fileData.frontmatter?.lang === "en"
 
     if (text) {
       const segments: (string | JSX.Element)[] = []
 
       if (fileData.dates) {
-        segments.push(<Date date={getDate(cfg, fileData)!} locale={cfg.locale} />)
+        segments.push(
+          <Date date={getDate(cfg, fileData)!} locale={isEnglish ? "en-US" : cfg.locale} />,
+        )
       }
 
       // Display reading time if enabled
       if (options.showReadingTime) {
         const { minutes, words: _words } = readingTime(text)
-        const displayedTime = i18n(cfg.locale).components.contentMeta.readingTime({
-          minutes: Math.ceil(minutes),
-        })
+        const displayedTime = isEnglish
+          ? `${Math.ceil(minutes)} min read`
+          : i18n(cfg.locale).components.contentMeta.readingTime({ minutes: Math.ceil(minutes) })
         segments.push(<span>{displayedTime}</span>)
       }
 

@@ -12,16 +12,13 @@ function cardImageUrl(image: string | undefined, baseUrl: string | undefined) {
 }
 
 const HomeRecentPosts: QuartzComponent = ({ allFiles, fileData, cfg }: QuartzComponentProps) => {
+  const isEnglish = fileData.frontmatter?.lang === "en"
+  const postPrefix = isEnglish ? "en/post/" : "post/"
   const posts = allFiles
     .filter((page) => {
       const slug = page.slug ?? ""
-      const isDraft =
-        page.frontmatter?.draft === true || page.frontmatter?.draft === "true"
-      return (
-        slug.startsWith("post/") &&
-        !page.filePath?.endsWith("index.md") &&
-        !isDraft
-      )
+      const isDraft = page.frontmatter?.draft === true || page.frontmatter?.draft === "true"
+      return slug.startsWith(postPrefix) && !page.filePath?.endsWith("index.md") && !isDraft
     })
     .sort((a, b) => (getDate(cfg, b)?.getTime() ?? 0) - (getDate(cfg, a)?.getTime() ?? 0))
     .slice(0, 3)
@@ -35,9 +32,9 @@ const HomeRecentPosts: QuartzComponent = ({ allFiles, fileData, cfg }: QuartzCom
         </div>
         <a
           class="recent-posts-all internal"
-          href={resolveRelative(fileData.slug!, "post" as SimpleSlug)}
+          href={resolveRelative(fileData.slug!, (isEnglish ? "en/post" : "post") as SimpleSlug)}
         >
-          모든 글 보기 <span aria-hidden="true">→</span>
+          {isEnglish ? "View all posts" : "모든 글 보기"} <span aria-hidden="true">→</span>
         </a>
       </div>
       <div class="recent-posts-list">
@@ -52,7 +49,7 @@ const HomeRecentPosts: QuartzComponent = ({ allFiles, fileData, cfg }: QuartzCom
                 <a
                   class="recent-post-item internal"
                   href={resolveRelative(fileData.slug!, post.slug!)}
-                  aria-label={`${title} 읽기`}
+                  aria-label={isEnglish ? `Read ${title}` : `${title} 읽기`}
                 >
                   {image && (
                     <div class="recent-post-image-wrap">
@@ -63,13 +60,15 @@ const HomeRecentPosts: QuartzComponent = ({ allFiles, fileData, cfg }: QuartzCom
                     <div class="recent-post-meta">
                       <span>ENGINEERING</span>
                       {date && (
-                        <time datetime={date.toISOString()}>{formatDate(date, cfg.locale)}</time>
+                        <time datetime={date.toISOString()}>
+                          {formatDate(date, isEnglish ? "en-US" : cfg.locale)}
+                        </time>
                       )}
                     </div>
                     <h3>{title}</h3>
                     {description && <p>{description}</p>}
                     <span class="recent-post-read" aria-hidden="true">
-                      Read note <span>↗</span>
+                      {isEnglish ? "Read post" : "글 읽기"} <span>↗</span>
                     </span>
                   </div>
                 </a>
@@ -77,7 +76,9 @@ const HomeRecentPosts: QuartzComponent = ({ allFiles, fileData, cfg }: QuartzCom
             )
           })
         ) : (
-          <p class="recent-posts-empty">첫 글을 준비하고 있습니다.</p>
+          <p class="recent-posts-empty">
+            {isEnglish ? "The first post is on its way." : "첫 글을 준비하고 있습니다."}
+          </p>
         )}
       </div>
     </section>
