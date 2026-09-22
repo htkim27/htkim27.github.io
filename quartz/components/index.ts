@@ -25,6 +25,7 @@ import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
 import HomeRecentPosts from "./HomeRecentPosts"
 import SimpleNavigation from "./SimpleNavigation"
+import LanguageToggle from "./LanguageToggle"
 
 export {
   ArticleTitle,
@@ -54,4 +55,5 @@ export {
   ConditionalRender,
   HomeRecentPosts,
   SimpleNavigation,
+  LanguageToggle,
 }

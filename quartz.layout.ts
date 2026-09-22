@@ -8,7 +8,7 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [
     Component.ConditionalRender({
       component: Component.HomeRecentPosts(),
-      condition: (page) => page.fileData.slug === "index",
+      condition: (page) => page.fileData.slug === "index" || page.fileData.slug === "en/index",
     }),
   ],
   footer: Component.Footer({
@@ -36,7 +36,10 @@ export const defaultContentPageLayout: PageLayout = {
       condition: (page) => page.fileData.slug !== "index",
     }),
     Component.MobileOnly(Component.Spacer()),
-    Component.Darkmode(),
+    Component.Flex({
+      components: [{ Component: Component.Darkmode() }, { Component: Component.LanguageToggle() }],
+      gap: ".8rem",
+    }),
     Component.SimpleNavigation(),
   ],
   right: [],
@@ -48,7 +51,10 @@ export const defaultListPageLayout: PageLayout = {
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
-    Component.Darkmode(),
+    Component.Flex({
+      components: [{ Component: Component.Darkmode() }, { Component: Component.LanguageToggle() }],
+      gap: ".8rem",
+    }),
     Component.SimpleNavigation(),
   ],
   right: [],

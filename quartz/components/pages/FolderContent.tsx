@@ -29,6 +29,8 @@ export default ((opts?: Partial<FolderContentOptions>) => {
 
   const FolderContent: QuartzComponent = (props: QuartzComponentProps) => {
     const { tree, fileData, allFiles, cfg } = props
+    const isEnglish = fileData.frontmatter?.lang === "en"
+    const isEnglishHome = fileData.slug === "en/index"
 
     const trie = (props.ctx.trie ??= trieFromAllFiles(allFiles))
     const folder = trie.findNode(fileData.slug!.split("/"))
@@ -105,18 +107,22 @@ export default ((opts?: Partial<FolderContentOptions>) => {
     return (
       <div class="popover-hint">
         <article class={classes}>{content}</article>
-        <div class="page-listing">
-          {options.showFolderCount && (
-            <p>
-              {i18n(cfg.locale).pages.folderContent.itemsUnderFolder({
-                count: allPagesInFolder.length,
-              })}
-            </p>
-          )}
-          <div>
-            <PageList {...listProps} />
+        {!isEnglishHome && (
+          <div class="page-listing">
+            {options.showFolderCount && (
+              <p>
+                {isEnglish
+                  ? `${allPagesInFolder.length} item${allPagesInFolder.length === 1 ? "" : "s"}`
+                  : i18n(cfg.locale).pages.folderContent.itemsUnderFolder({
+                      count: allPagesInFolder.length,
+                    })}
+              </p>
+            )}
+            <div>
+              <PageList {...listProps} />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     )
   }
