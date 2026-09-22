@@ -10,13 +10,13 @@ tags: ["Chatbot", "V2V Latency", "Architecture Optimization"]
 > **[`omni-iot` GitHub Project](https://github.com/htkim27/omni-iot)**
 > Have you ever imagined an agent like Iron Man's Jarvis that lets you control devices around your home through natural conversation? I wanted to make that idea real by building a **two-way voice assistant that runs independently on an ordinary home computer, without relying on the external internet, and that anyone can freely customize.**
 
-![The Omni-IoT voice agent having a natural conversation with a user](/assets/omni_iot_latency_cover.png)
+![The Omni-IoT voice agent having a natural conversation with a user](../../assets/omni_iot_latency_cover.png)
 
 For a conversational voice agent, the time between the end of a user's utterance and the first audible word from the agent—voice response latency—determines whether the interaction feels natural. This post walks through how I reduced that delay on my home computer by tuning everything from hardware settings to the end-to-end dataflow architecture.
 
 ## A Silence Too Long to Feel Like Conversation
 
-![A simple, straightforward sequential chatbot pipeline](/assets/omni_iot_pipeline.png)
+![A simple, straightforward sequential chatbot pipeline](../../assets/omni_iot_pipeline.png)
 
 The first version used a simple sequential pipeline. After the user stopped speaking, it waited briefly—about 0.6 seconds—to confirm the end of the utterance. The language model then interpreted the request, generated the entire response, and passed the finished text to a text-to-speech engine for playback.
 
@@ -44,7 +44,7 @@ Inference optimizations can also trade answer quality for speed. This experiment
 
 In the original pipeline, the text-to-speech engine sat idle until the language model had finished writing the entire response. Only then did it begin generating audio. That unnecessary wait led to the next change: a **streaming, concurrent pipeline**.
 
-![Voice AI Pipeline Architecture](/assets/Voice%20AI%20Pipeline%20Architecture.svg)
+![Voice AI Pipeline Architecture](../../assets/Voice%20AI%20Pipeline%20Architecture.svg)
 
 1. **Segment text as it streams.** As the language model generates tokens, send a phrase downstream as soon as it reaches a natural semantic boundary such as a comma or period.
 2. **Generate speech concurrently.** The speech engine no longer waits for the complete response; it immediately synthesizes the short phrase it just received.
@@ -58,7 +58,7 @@ The perceived wait had finally entered the two-second range where human conversa
 
 ## Conclusion: Finding the Right Balance Under Resource Constraints
 
-![Experiment summary: changes in user-perceived response latency](/assets/omni_iot_latency_chart.png)
+![Experiment summary: changes in user-perceived response latency](../../assets/omni_iot_latency_chart.png)
 
 Building an agent system without access to expensive parallel compute or abundant cloud infrastructure is always challenging. But even on an ordinary machine with 16 GB of VRAM, accurately identifying the problem made meaningful improvements possible.
 
