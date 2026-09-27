@@ -32,12 +32,11 @@ tags:
 - **스토리 품질 통제 & 평가**: 원본 개요 반영도(Coverage/Adherence)를 세부 분해해 측정하는 자동 평가기를 구축하여 Human Eval 일치율 극대화
 - **Human-in-the-Loop 어시스턴트**: 작가의 피드백을 실시간 프롬프트·컨텍스트에 반영하는 상호작용형 협업 환경 개발
 
-#### SCRIPTy · 전문가용 장문 콘텐츠 리뷰 AI
+#### SCRIPTy · 전문가용 장문 콘텐츠 리뷰 AI (ACL 2025 Main)
 > 30,000+ 토큰의 영상·방송·소설 등 장문 서사를 정밀 분석·요약하는 Multi-Agent 시스템
 
 - **계층형 에이전트 설계**: 긴 서사 분해(Task Decomposition), 병렬 생성·선택, 계층적 병합(Hierarchical Merging)을 통해 환각 없는 초장문 요약 구조 구현
 - **가드레일 & 자가 교정**: Reflection 기법과 확장형 Registry 패턴을 적용해 환각 및 팩트 오류를 억제하는 전·후처리 가드레일 구축
-- **평가 체계 확립**: 정량 지표, Human Evaluation, LLM-as-Judge를 통합하여 전문가 눈높이의 품질 제어 기준 수립
 - **엔터프라이즈 서빙 최적화**: LangGraph 기반 워크플로우 병렬화 및 vLLM 추론 가속으로 프로덕션 서빙 성능 확보
 
 ---
