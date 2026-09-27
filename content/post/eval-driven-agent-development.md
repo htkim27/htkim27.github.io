@@ -6,6 +6,8 @@ socialImage: "https://htkim27.github.io/assets/eval_driven_cover.jpg"
 tags: ["AI Agent", "Evaluation", "LLM", "Engineering", "Production", "Vibe Coding"]
 ---
 
+> 에이전트를 유용하게 만드는 복잡성과 자율성은 역설적으로 에이전트의 성능 평가를 매우 어렵게 만든다. 실무 프로덕션 환경에서 개발과 함께 발전하는 평가 시스템을 만들기 위해서 구체적 요구사항 기반의 실용적 검증부터 시작하여 발전시켜 나가야 한다.
+
 ![에이전트 평가 시스템 도입 전후 대비](../assets/eval_driven_cover.jpg)
 
 ## 1. 평가 시스템의 필요성을 깨달은 계기
