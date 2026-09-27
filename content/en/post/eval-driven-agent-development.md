@@ -4,7 +4,6 @@ date: "2026-09-25"
 description: "Based on the problem of lacking an evaluation system and the lessons learned from the failure of academic approaches during the launch of an AI agent service, we share the process of building an evaluation system optimized for practical production environments and 4 core design philosophies."
 socialImage: "https://htkim27.github.io/assets/eval_driven_cover.jpg"
 tags: ["AI Agent", "Evaluation", "LLM", "Engineering", "Production", "Vibe Coding"]
-draft: false
 ---
 
 ![Comparison of before and after adopting an agent evaluation system](../../assets/eval_driven_cover.jpg)
