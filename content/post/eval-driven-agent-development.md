@@ -4,7 +4,7 @@ date: "2026-09-25"
 description: "AI 에이전트 서비스 런칭 과정에서 겪은 평가 부재의 문제와 학술적 접근의 실패 교훈을 바탕으로, 실무 프로덕션 환경에 최적화된 평가 시스템 구축 과정과 4가지 핵심 설계 철학을 공유한다."
 socialImage: "https://htkim27.github.io/assets/eval_driven_cover.jpg"
 tags: ["AI Agent", "Evaluation", "LLM", "Engineering", "Production", "Vibe Coding"]
-draft: true
+draft: false
 ---
 
 ![에이전트 평가 시스템 도입 전후 대비](../assets/eval_driven_cover.jpg)
