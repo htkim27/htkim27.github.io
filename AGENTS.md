@@ -27,3 +27,4 @@ A standard Anthropic engineering post is comprehensive (typically 1,500 - 5,000 
 - When asked to draft a post, ALWAYS ask the user for the core engineering problem and the concrete solution before writing.
 - Never write a shallow overview; dive deep into the "how" and "why", just like an Anthropic engineer would.
 - Ensure the Markdown file uses appropriate YAML frontmatter (for Quartz/Hugo/etc.) as required by the `htkim27.github.io` setup.
+- **When modifying or updating a Korean post in `content/post/`, you MUST ensure that the corresponding English post in `content/en/post/` is also updated and synced to match the changes.**
